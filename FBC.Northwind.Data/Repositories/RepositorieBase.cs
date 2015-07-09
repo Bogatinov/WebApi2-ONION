@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using FBC.Northwind.Data.Context;
@@ -8,10 +7,10 @@ using FBC.Northwind.RepositoryInterfaces;
 
 namespace FBC.Northwind.Data.Repositories
 {
-       public abstract class RepositoryBase<T> : IRepository<T> where T : class
+    public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
+        private readonly IDbSet<T> _dbSet;
         private DbContext _context;
-        private IDbSet<T> _dbSet;
 
         protected RepositoryBase(IDbContextFactory contextFactory)
         {
@@ -49,7 +48,7 @@ namespace FBC.Northwind.Data.Repositories
 
         public virtual void Delete(object id)
         {
-            T entityToDelete = _dbSet.Find(id);
+            var entityToDelete = _dbSet.Find(id);
             Delete(entityToDelete);
         }
 

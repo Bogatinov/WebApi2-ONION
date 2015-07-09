@@ -17,11 +17,10 @@
 
 
 using FBC.Northwind.DependencyResolverWeb;
+using StructureMap;
 
 namespace FBC.Northwind.WebUI.DependencyResolution
 {
-    using StructureMap;
-
     public static class IoC
     {
         public static IContainer Initialize()
@@ -34,4 +33,3 @@ namespace FBC.Northwind.WebUI.DependencyResolution
         }
     }
 }
-

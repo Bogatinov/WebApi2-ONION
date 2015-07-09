@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 using FBC.Northwind.Data.Context;
 using FBC.Northwind.Domain;
+using FBC.Northwind.Domain.Data;
 
 namespace FBC.Northwind.Data.EntityConfig
 {
-    using System.Data.Entity;
-    using System.Data.Entity.ModelConfiguration;
-    using FBC.Northwind.Data.Context;
-    using FBC.Northwind.Domain;
-    using FBC.Northwind.Domain.Data;
-
     namespace Northwind.MusicStore.Data.EntityConfig
     {
         /// <summary>
-        /// This is where you can add additional configuration for your database tables.
-        /// This is preferable to having database configuration leak all over your Domain Entities.
+        ///     This is where you can add additional configuration for your database tables.
+        ///     This is preferable to having database configuration leak all over your Domain Entities.
         /// </summary>
         internal class AlbumConfiguration : EntityTypeConfiguration<Album>
         {
@@ -46,7 +38,6 @@ namespace FBC.Northwind.Data.EntityConfig
 
                 albums.ForEach(a => context.Albums.Add(a));
             }
-
         }
     }
 }

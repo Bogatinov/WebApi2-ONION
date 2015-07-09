@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FBC.Northwind.Data.Context;
 using FBC.Northwind.RepositoryInterfaces;
 
@@ -10,7 +6,7 @@ namespace FBC.Northwind.Data.UnitOfWOrk
 {
     public class MusicStoreUnitOfWork : IUnitOfWork
     {
-        private IDbContextFactory _contextFactory;
+        private readonly IDbContextFactory _contextFactory;
         private MusicStoreDbContext _context;
 
         public MusicStoreUnitOfWork(IDbContextFactory contextFactory)

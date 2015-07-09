@@ -16,14 +16,19 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Web.Http;
+using FBC.Northwind.WebUI.App_Start;
 using FBC.Northwind.WebUI.DependencyResolution;
+using WebActivatorEx;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(FBC.Northwind.WebUI.App_Start.StructuremapWebApi), "Start")]
+[assembly: PostApplicationStartMethod(typeof (StructuremapWebApi), "Start")]
 
-namespace FBC.Northwind.WebUI.App_Start {
-    public static class StructuremapWebApi {
-        public static void Start() {
-			var container = StructuremapMvc.StructureMapDependencyScope.Container;
+namespace FBC.Northwind.WebUI.App_Start
+{
+    public static class StructuremapWebApi
+    {
+        public static void Start()
+        {
+            var container = StructuremapMvc.StructureMapDependencyScope.Container;
             GlobalConfiguration.Configuration.DependencyResolver = new StructureMapWebApiDependencyResolver(container);
         }
     }

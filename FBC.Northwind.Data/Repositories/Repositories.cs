@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FBC.Northwind.Data.Context;
 using FBC.Northwind.Domain;
 using FBC.Northwind.RepositoryInterfaces;
@@ -32,7 +28,7 @@ namespace FBC.Northwind.Data.Repositories
 
         public IEnumerable<Album> GetLatestReleases(int count)
         {
-            List<Album> latestReleases = Get()
+            var latestReleases = Get()
                 .OrderByDescending(a => a.CreatedDateTime)
                 .Take(count)
                 .ToList();

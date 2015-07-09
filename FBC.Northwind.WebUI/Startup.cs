@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FBC.Northwind.WebUI;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(FBC.Northwind.WebUI.Startup))]
+[assembly: OwinStartup(typeof (Startup))]
 
 namespace FBC.Northwind.WebUI
 {

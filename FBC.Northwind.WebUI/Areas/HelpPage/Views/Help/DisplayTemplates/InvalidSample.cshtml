@@ -1,10 +1,12 @@
-@using FBC.Northwind.WebUI.Areas.HelpPage
-@model InvalidSample
+@model FBC.Northwind.WebUI.Areas.HelpPage.InvalidSample
+
 
 @if (HttpContext.Current.IsDebuggingEnabled)
 {
     <div class="warning-message-container">
+
         <p>@Model.ErrorMessage</p>
+
     </div>
 }
 else

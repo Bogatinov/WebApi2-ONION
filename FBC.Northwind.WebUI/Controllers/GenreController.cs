@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using FBC.Northwind.Domain;
 using FBC.Northwind.RepositoryInterfaces;
@@ -20,7 +17,6 @@ namespace FBC.Northwind.WebUI.Controllers
             _unitOfWork = unitOfWork;
         }
 
-
         public List<Genre> Get()
         {
             return _genreRepository.Get().ToList();
@@ -33,7 +29,5 @@ namespace FBC.Northwind.WebUI.Controllers
             _genreRepository.Add(genre);
             _unitOfWork.SaveChanges();
         }
-
     }
 }
-

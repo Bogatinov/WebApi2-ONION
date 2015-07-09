@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using FBC.Northwind.Data.EntityConfig.Northwind.MusicStore.Data.EntityConfig;
 
 namespace FBC.Northwind.Data.Context
@@ -25,12 +21,11 @@ namespace FBC.Northwind.Data.Context
 
         private void InitialiseContext()
         {
-
             //When Using SQLDeploy, we want to update the database ourselves.
             //System.Data.Entity.Database.SetInitializer<MusicStoreDbContext>(null);
 
             //To Use CodeFirst and have it create the sample data ..  this initialiser will create the database and insert sample data.
-            System.Data.Entity.Database.SetInitializer<MusicStoreDbContext>(new MusicStoreDbInitializer());
+            Database.SetInitializer(new MusicStoreDbInitializer());
             //once up and running, use the following
             //System.Data.Entity.Database.SetInitializer<MusicStoreDbContext>(null);
 

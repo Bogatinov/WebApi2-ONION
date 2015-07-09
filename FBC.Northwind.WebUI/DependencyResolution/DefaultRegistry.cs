@@ -15,16 +15,20 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace FBC.Northwind.WebUI.DependencyResolution {
-    using StructureMap.Configuration.DSL;
-    using StructureMap.Graph;
-	
-    public class DefaultRegistry : Registry {
+using StructureMap.Configuration.DSL;
+using StructureMap.Graph;
+
+namespace FBC.Northwind.WebUI.DependencyResolution
+{
+    public class DefaultRegistry : Registry
+    {
         #region Constructors and Destructors
 
-        public DefaultRegistry() {
+        public DefaultRegistry()
+        {
             Scan(
-                scan => {
+                scan =>
+                {
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
